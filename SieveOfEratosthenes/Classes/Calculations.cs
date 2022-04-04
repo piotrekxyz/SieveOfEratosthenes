@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SieveOfEratosthenes.Classes
 {
-	static class Calculations
+	public static class Calculations
 	{
 		public static void SzukajRownolegleLP(long poczatekPrzedzialu, long koniecPrzedzialu)
 		{
@@ -35,15 +35,17 @@ namespace SieveOfEratosthenes.Classes
 				"W przedziale {0:0,0} - {1:0,0} jest\n{2:0,0} liczb pierwszych, policzono Sekwencyjnie w {3} s\n", poczatekPrzedzialu, koniecPrzedzialu, licznik, (double)timer.ElapsedMilliseconds / 1000));
 		}
 
-		public static void SzukajSitemEratostenesaLP(long poczatek, long koniec)
+		public static long SzukajSitemEratostenesaLP(long poczatek, long koniec)
 		{
 			Stopwatch timer = new Stopwatch();
 			timer.Start();
 			bool[] tablica = new bool[koniec + 1];  // żeby się indeksy zgadzały z prawdziwymi liczbami
 			WykreslajSitem(ref tablica, koniec);
-			long iloscLP = poczatek == 2 ? tablica.Count(n => n == false) : PoliczLiczbyPierwszeWTablicy(poczatek, ref tablica);
+			long iloscLP = PoliczLiczbyPierwszeWTablicy(poczatek, ref tablica);
 			Console.WriteLine(string.Format(CultureInfo.InvariantCulture,
 				"W przedziale {0:0,0} - {1:0,0} jest\n{2:0,0} liczb pierwszych, policzono Sitem Eratostenesa w {3} s\n", poczatek, koniec, iloscLP, (double)timer.ElapsedMilliseconds / 1000));
+
+			return iloscLP;
 		}
 
 		static void WykreslajSitem(ref bool[] tablica, long koniecPrzedzialu)
@@ -65,6 +67,9 @@ namespace SieveOfEratosthenes.Classes
 
 		static long PoliczLiczbyPierwszeWTablicy(long poczatekPrzedzialu, ref bool[] tablica)
 		{
+			if (poczatekPrzedzialu == 2)
+				return tablica.Count(n => n == false);
+
 			long licznik = 0;
 			for (long i = poczatekPrzedzialu; i < tablica.Length; i++)
 				if (tablica[i] == false)

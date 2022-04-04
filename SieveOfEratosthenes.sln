@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SieveOfEratosthenes", "SieveOfEratosthenes\SieveOfEratosthenes.csproj", "{7FD73DFC-9B09-4280-869B-91621F086775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SieveOfEratosthenes.Tests", "SieveOfEratosthenes.Tests\SieveOfEratosthenes.Tests.csproj", "{826910C4-3EF3-4B48-8C51-A0E5BEE3E7A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7FD73DFC-9B09-4280-869B-91621F086775}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FD73DFC-9B09-4280-869B-91621F086775}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FD73DFC-9B09-4280-869B-91621F086775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826910C4-3EF3-4B48-8C51-A0E5BEE3E7A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826910C4-3EF3-4B48-8C51-A0E5BEE3E7A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826910C4-3EF3-4B48-8C51-A0E5BEE3E7A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826910C4-3EF3-4B48-8C51-A0E5BEE3E7A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
